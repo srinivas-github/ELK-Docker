@@ -78,3 +78,10 @@ Note that the EXPOSE instruction does not automatically expose the listed ports 
 * CMD [./opt/start-elk.sh.]
 	* Specifies that, as default, the start-elk.sh script is to be launched whenever a container is created from this Docker image.
 If another executable is provided when launching a container, this script will not be executed.
+
+
+# Alternative (Without building ther dockerfile), We can Simply Pull docker image which is configured with ELK and can be run with the following commands:
+```
+$ sudo docker pull sebp/elk
+$ sudo docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk
+```
